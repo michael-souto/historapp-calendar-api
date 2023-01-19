@@ -1,0 +1,7 @@
+#spring:
+#  jpa:
+#    open-in-view: 'false'
+#  datasource:
+#    username: sa
+#    url: jdbc:h2:mem:testdb
+#    password: ''
