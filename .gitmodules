@@ -4,3 +4,9 @@
 [submodule "src/submodules/framework-crud"]
 	path = src/submodules/framework-crud
 	url = git@github.com:michael-souto/framework-crud.git
+[submodule "src/submodules/framework-multitenant"]
+	path = src/submodules/framework-multitenant
+	url = git@github.com:michael-souto/framework-multitenant.git
+[submodule "src/submodules/framework-core"]
+	path = src/submodules/framework-core
+	url = git@github.com:michael-souto/framework-core.git

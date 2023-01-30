@@ -66,6 +66,11 @@
 			<artifactId>spring-boot-starter-hateoas</artifactId>
 		</dependency>
 
+		<dependency>
+			<groupId>org.flywaydb</groupId>
+			<artifactId>flyway-core</artifactId>
+		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -87,8 +92,10 @@
 						</goals>
 						<configuration>
 							<sources>
+								<source>src/submodules/framework-core/src/main/java</source>
 								<source>src/submodules/framework-api/src/main/java</source>
 								<source>src/submodules/framework-crud/src/main/java</source>
+								<source>src/submodules/framework-multitenant/src/main/java</source>
 							</sources>
 						</configuration>
 					</execution>
