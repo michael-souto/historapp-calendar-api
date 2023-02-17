@@ -1,4 +1,4 @@
-package com.detrasoft.historapp.calendarapi;
+package com.detrasoft.historapp.calendar;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

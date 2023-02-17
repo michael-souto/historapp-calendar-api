@@ -1,4 +1,4 @@
-package com.detrasoft.historapp.calendarapi;
+package com.detrasoft.historapp.calendar;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

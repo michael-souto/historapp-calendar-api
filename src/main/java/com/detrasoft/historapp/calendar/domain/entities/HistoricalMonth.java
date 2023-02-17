@@ -1,4 +1,4 @@
-package com.detrasoft.historapp.calendarapi.domain.entities;
+package com.detrasoft.historapp.calendar.domain.entities;
 
 import com.detrasoft.framework.crud.entities.GenericEntity;
 import lombok.*;
@@ -6,7 +6,6 @@ import lombok.*;
 import javax.persistence.*;
 import java.io.Serial;
 import java.io.Serializable;
-import java.util.List;
 
 @Builder
 @Getter
@@ -14,17 +13,31 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "historical_calendar")
-public class HistoricalCalendar extends GenericEntity implements Serializable {
+@Table(name = "historical_month")
+public class HistoricalMonth extends GenericEntity implements Serializable {
 
 	@Serial
 	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+
+	private int orderYear;
+	
 	private String name;
+	
 	@Column(columnDefinition = "TEXT")
 	private String comments;
-	@OneToMany(mappedBy = "historicalCalendar")
-	private List<HistoricalMonth> months;
+
+	private int numberDays;
+
+	private String averageTemperature;
+
+	private String agriculture;
+
+	@ManyToOne
+	@JoinColumn(name = "historical_calendar_id", nullable = false)
+	private HistoricalCalendar historicalCalendar;
+
 }

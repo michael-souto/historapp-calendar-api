@@ -1,9 +1,9 @@
-package com.detrasoft.historapp.calendarapi.api.assemblers;
+package com.detrasoft.historapp.calendar.api.assemblers;
 
-import com.detrasoft.historapp.calendarapi.api.controller.HistoricalCalendarResource;
-import com.detrasoft.historapp.calendarapi.api.dtos.HistoricalCalendarDTO;
+import com.detrasoft.historapp.calendar.api.controller.HistoricalCalendarResource;
+import com.detrasoft.historapp.calendar.api.dtos.HistoricalCalendarDTO;
 import com.detrasoft.framework.api.dto.converters.GenericRepresentationModelDTOAssembler;
-import com.detrasoft.historapp.calendarapi.domain.entities.HistoricalCalendar;
+import com.detrasoft.historapp.calendar.domain.entities.HistoricalCalendar;
 import org.springframework.stereotype.Component;
 
 @Component

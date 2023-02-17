@@ -1,4 +1,4 @@
-package com.detrasoft.historapp.calendarapi.domain.entities;
+package com.detrasoft.historapp.calendar.domain.entities;
 
 import com.detrasoft.framework.crud.entities.GenericEntity;
 import lombok.*;
