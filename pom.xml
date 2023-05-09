@@ -126,7 +126,7 @@
 	</dependencyManagement>
 
 	<build>
-		<finalName>character-api</finalName>
+		<finalName>calendar-api</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
