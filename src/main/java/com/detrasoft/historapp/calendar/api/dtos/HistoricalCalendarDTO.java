@@ -1,11 +1,14 @@
 package com.detrasoft.historapp.calendar.api.dtos;
 
 import com.detrasoft.framework.api.dto.GenericRepresentationModelDTO;
+import com.detrasoft.historapp.calendar.domain.entities.HistoricalMonth;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.hateoas.server.core.Relation;
+
+import java.util.List;
 
 @Getter
 @Setter
@@ -16,4 +19,5 @@ public class HistoricalCalendarDTO extends GenericRepresentationModelDTO<Histori
 	private Long id;
 	private String name;
 	private String comments;
+	private List<HistoricalMonthDTO> months;
 }

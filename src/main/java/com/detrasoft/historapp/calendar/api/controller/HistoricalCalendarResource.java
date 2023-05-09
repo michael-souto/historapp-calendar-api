@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = "/calendars")
+@RequestMapping(value = "/calendar")
 public class HistoricalCalendarResource extends GenericHateoasCRUDController<HistoricalCalendarDTO> {
 
 	@Autowired
