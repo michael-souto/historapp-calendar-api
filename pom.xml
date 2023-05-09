@@ -15,7 +15,7 @@
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>
-		<spring-cloud.version>2021.0.4</spring-cloud.version>
+		<spring-cloud.version>2021.0.5</spring-cloud.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -46,11 +46,6 @@
 		</dependency>
 
 		<dependency>
-			<groupId>org.flywaydb</groupId>
-			<artifactId>flyway-core</artifactId>
-		</dependency>
-
-		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
@@ -71,6 +66,10 @@
 			<artifactId>spring-boot-starter-hateoas</artifactId>
 		</dependency>
 
+		<dependency>
+			<groupId>org.flywaydb</groupId>
+			<artifactId>flyway-core</artifactId>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
@@ -82,20 +81,52 @@
 			<artifactId>spring-retry</artifactId>
 		</dependency>
 
-		<!-- DEPÊNDENCIAS DO ACTUATOR PARA MONITORAMENTO DE NUVEM -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
+
+		<!-- Documentation OpenAPI Swagger dependency -->
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-ui</artifactId>
+			<version>1.6.14</version>
+		</dependency>
+		<!-- Documentation OpenAPI Swagger dependency -->
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-hateoas</artifactId>
+			<version>1.6.14</version>
+		</dependency>
+
+		<!-- Actuator for monitoring dependency -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
+
 		<!-- Security dependency -->
 		<dependency>
 			<groupId>org.springframework.security.oauth.boot</groupId>
 			<artifactId>spring-security-oauth2-autoconfigure</artifactId>
 		</dependency>
+
 	</dependencies>
 
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
 	<build>
-		<finalName>calendar-api</finalName>
+		<finalName>character-api</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -116,8 +147,8 @@
 								<source>src/submodules/framework-core/src/main/java</source>
 								<source>src/submodules/framework-api/src/main/java</source>
 								<source>src/submodules/framework-crud/src/main/java</source>
-								<source>src/submodules/framework-multitenant/src/main/java</source>
 								<source>src/submodules/framework-security/src/main/java</source>
+								<source>src/submodules/framework-multitenant/src/main/java</source>
 							</sources>
 						</configuration>
 					</execution>
@@ -126,16 +157,41 @@
 		</plugins>
 	</build>
 
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>org.springframework.cloud</groupId>
-				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>${spring-cloud.version}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
+	<repositories>
+		<repository>
+			<id>spring-milestones</id>
+			<name>Spring Milestones</name>
+			<url>https://repo.spring.io/milestone</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>spring-snapshots</id>
+			<name>Spring Snapshots</name>
+			<url>https://repo.spring.io/snapshot</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>spring-milestones</id>
+			<name>Spring Milestones</name>
+			<url>https://repo.spring.io/milestone</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</pluginRepository>
+		<pluginRepository>
+			<id>spring-snapshots</id>
+			<name>Spring Snapshots</name>
+			<url>https://repo.spring.io/snapshot</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+		</pluginRepository>
+	</pluginRepositories>
 
 </project>
