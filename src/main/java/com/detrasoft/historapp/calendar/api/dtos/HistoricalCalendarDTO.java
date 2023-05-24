@@ -19,5 +19,9 @@ public class HistoricalCalendarDTO extends GenericRepresentationModelDTO<Histori
 	private Long id;
 	private String name;
 	private String comments;
+	private Boolean allowYearZero;
+	private Boolean allowYearBeforeZero;
+	private String acronymForYearsBeforeZero;
+	private String acronymForYearsAfterZero;
 	private List<HistoricalMonthDTO> months;
 }

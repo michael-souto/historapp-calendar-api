@@ -25,6 +25,12 @@ public class HistoricalCalendar extends GenericEntity implements Serializable {
 	private String name;
 	@Column(columnDefinition = "TEXT")
 	private String comments;
+	private Boolean allowYearZero;
+	private Boolean allowYearBeforeZero;
+	private String acronymForYearsBeforeZero;
+	private String acronymForYearsAfterZero;
 	@OneToMany(mappedBy = "historicalCalendar")
 	private List<HistoricalMonth> months;
+
+
 }

@@ -1,6 +1,6 @@
-create table historical_calendar (id  bigserial not null, comments TEXT, name varchar(255), primary key (id));
-create table historical_date (id  bigserial not null, historicDay int4 not null, historicYear int4 not null, historical_calendar_id int8 not null, calendar_month_id int8 not null, primary key (id));
-create table historical_month (id  bigserial not null, agriculture varchar(255), averageTemperature varchar(255), comments TEXT, name varchar(255), numberDays int4 not null, orderYear int4 not null, historical_calendar_id int8 not null, primary key (id));
-alter table if exists historical_date add constraint FK1_historical_date foreign key (historical_calendar_id) references historical_calendar;
-alter table if exists historical_date add constraint FK2_historical_date foreign key (calendar_month_id) references historical_month;
-alter table if exists historical_month add constraint FK1_historical_month foreign key (historical_calendar_id) references historical_calendar;
+CREATE TABLE HISTORICAL_CALENDAR (ID  BIGSERIAL NOT NULL, COMMENTS TEXT, NAME VARCHAR, ALLOWYEARZERO BOOLEAN, ALLOWYEARBEFOREZERO BOOLEAN, ACRONYMFORYEARSBEFOREZERO VARCHAR, ACRONYMFORYEARSAFTERZERO VARCHAR, PRIMARY KEY (ID));
+CREATE TABLE HISTORICAL_DATE (ID  BIGSERIAL NOT NULL, HISTORICDAY INT4 NOT NULL, HISTORICYEAR INT4 NOT NULL, HISTORICAL_CALENDAR_ID INT8 NOT NULL, CALENDAR_MONTH_ID INT8 NOT NULL, PRIMARY KEY (ID));
+CREATE TABLE HISTORICAL_MONTH (ID  BIGSERIAL NOT NULL, AGRICULTURE VARCHAR, AVERAGETEMPERATURE VARCHAR, COMMENTS TEXT, NAME VARCHAR, NUMBERDAYS INT4 NOT NULL, ORDERYEAR INT4 NOT NULL, HISTORICAL_CALENDAR_ID INT8 NOT NULL, PRIMARY KEY (ID));
+ALTER TABLE IF EXISTS HISTORICAL_DATE ADD CONSTRAINT FK1_HISTORICAL_DATE FOREIGN KEY (HISTORICAL_CALENDAR_ID) REFERENCES HISTORICAL_CALENDAR;
+ALTER TABLE IF EXISTS HISTORICAL_DATE ADD CONSTRAINT FK2_HISTORICAL_DATE FOREIGN KEY (CALENDAR_MONTH_ID) REFERENCES HISTORICAL_MONTH;
+ALTER TABLE IF EXISTS HISTORICAL_MONTH ADD CONSTRAINT FK1_HISTORICAL_MONTH FOREIGN KEY (HISTORICAL_CALENDAR_ID) REFERENCES HISTORICAL_CALENDAR;
